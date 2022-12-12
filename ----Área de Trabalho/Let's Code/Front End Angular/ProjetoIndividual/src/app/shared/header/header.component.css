@@ -1,0 +1,19 @@
+.mat-toolbar-single-row {
+    justify-content: space-between;
+    background-color: #D91E2E;
+    height: 120px; ;
+}
+.logo_font{
+    font-family: Garamond;
+    color: #040D09;
+    font-weight: bold;
+    font-size: x-large;
+}
+.active{
+    text-decoration: underline;
+}
+a {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.466);
+    margin: 5px;
+    background-color: #D91818;
+}

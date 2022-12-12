@@ -1,0 +1,12 @@
+.tasks-container {
+    margin: 20px 25px;
+    height: fit-content;
+    /* display: inline-block; */
+    /* background-color: "#040D09" */
+  }
+.logo_font{
+    font-family: 'Cormorant Garamond',
+  }
+  img{
+    border-radius: 20px;
+  }
