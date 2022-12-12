@@ -1,3 +1,4 @@
+import { StorageService } from './services/storage.service';
 
 import { SharedModule } from './shared/shared.module';
 import { NgModule } from '@angular/core';
@@ -23,7 +24,7 @@ import { PagesModule } from './pages/pages.module';
     BrowserAnimationsModule
 
   ],
-  providers: [],
+  providers: [StorageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
