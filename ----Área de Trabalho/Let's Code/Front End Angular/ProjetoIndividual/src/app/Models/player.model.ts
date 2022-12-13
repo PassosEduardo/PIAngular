@@ -1,5 +1,8 @@
 export default class PlayerModel{
-    
+    static lastId: number = 3;
+
+
+    id: number;
     title?: string;
     subtitle?: string;
     birthDate?: Date;
@@ -23,6 +26,12 @@ export default class PlayerModel{
             this.nationality = nationality;
             this.image = image;
             this.position = position;
+
+            this.id = PlayerModel.updateLastId();
     }
+
+    static updateLastId(id?: number): number {
+        return ++this.lastId;
+      }
 
 }

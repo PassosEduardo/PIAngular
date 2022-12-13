@@ -5,13 +5,15 @@ import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './header/header.component';
 import { AgePipe } from './pipes/age.pipe';
 import { Router, RouterModule } from '@angular/router';
+import { DialogComponent } from './dialog/dialog.component';
 
 
 
 @NgModule({
   declarations: [
     HeaderComponent,
-    AgePipe
+    AgePipe,
+    DialogComponent
   ],
   imports: [
     CommonModule,

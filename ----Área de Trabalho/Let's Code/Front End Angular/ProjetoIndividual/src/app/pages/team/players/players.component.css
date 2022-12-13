@@ -12,7 +12,6 @@
     margin: 30px;
     margin-left: 50px;
     display: inline-block;
-    justify-content: center;
 }
 .example-card:hover {
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.856);
@@ -26,3 +25,20 @@ img{
     width: 280px;
     height: 186.78px;
 }
+.deleteIcon{
+    position: absolute;
+    right: 15px;
+    background-color: white;
+    border-color: white;
+    color: grey;
+}
+.editIcon{
+    position: absolute;
+    right: 55px;
+    background-color: white;
+    border-color: white;
+    color: grey;
+}
+/* button{
+    all: unset;
+} */

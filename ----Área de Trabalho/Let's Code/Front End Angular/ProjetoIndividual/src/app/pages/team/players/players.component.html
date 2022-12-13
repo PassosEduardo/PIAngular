@@ -1,9 +1,13 @@
 <mat-card class="example-card">
-    <mat-card-header>
-      <!-- <div mat-card-avatar class="example-header-image"></div> -->
+    <mat-card-header style="display:flexbox;">
       <mat-card-subtitle>{{player?.subtitle}}</mat-card-subtitle>
-      <mat-card-title>{{player?.title }}</mat-card-title>
+      <mat-card-title>{{player?.title }}</mat-card-title> 
+      <button (click)="deleteItem()"   name="delete" class="deleteIcon" ><mat-icon name="deleteIcon">delete</mat-icon></button>    
+      <button class="editIcon" name="editIcon"><mat-icon >edit</mat-icon></button>  
     </mat-card-header>
+    <!-- <div mat-card-avatar class="deleteIcon">
+      <mat-icon>delete</mat-icon>
+    </div> -->
     <img mat-card-image src={{player?.image}} alt="Photo of a Shiba Inu">
     <mat-card-content>
   
@@ -11,10 +15,6 @@
         <p>Nacionalidade: {{player?.nationality}}<p>
         <p>Valor: {{player?.MarketValue | currency:'EUR'}} M</p>
         <p>Nascimento (Idade): {{player?.birthDate | date:'dd/MM/yyyy'}} {{player?.birthDate | age}}</p>
-
-      <!-- <p>
-        Giorgian Daniel De Arrascaeta Benedetti, mais conhecido como De Arrascaeta ou somente Arrascaeta, é um futebolista uruguaio que atua como meio-campista.
-      </p> -->
     </mat-card-content>
     <!-- <mat-card-actions>
       <button mat-button>LIKE</button>

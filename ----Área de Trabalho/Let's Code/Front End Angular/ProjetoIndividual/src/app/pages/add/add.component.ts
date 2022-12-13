@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormGroup,FormControl } from '@angular/forms';
 import PlayerModel from 'src/app/Models/player.model';
 import { PlayerService } from 'src/app/services/player.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add',
@@ -14,7 +15,7 @@ export class AddComponent {
   playerForm?: FormGroup;
   selectedPosition?: string;
 
-  constructor(private PlayerService : PlayerService) {}
+  constructor(private PlayerService : PlayerService, private router:Router) {}
 
   ngOnInit() {
     this.playerForm = new FormGroup({
@@ -37,10 +38,9 @@ export class AddComponent {
         nationality: this.playerForm?.controls['nationality'].value,
         image: this.playerForm?.controls['image'].value,
         position: this.playerForm?.controls['position'].value,
-
-
-      
+    
       })
+
   
       this.newPlayer = this.playerForm?.value;
 
@@ -49,7 +49,10 @@ export class AddComponent {
 
       this.PlayerService.postPlayer(this.newPlayer)
 
+    
       console.log("submitei")
+
+      this.router.navigate(['players']);
     }
 
 }
