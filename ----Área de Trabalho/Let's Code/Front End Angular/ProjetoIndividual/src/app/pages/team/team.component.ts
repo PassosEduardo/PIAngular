@@ -17,7 +17,7 @@ constructor(private PlayerService : PlayerService) {}
     this.playersList = this.PlayerService.getPlayers();
   }
   ngOnChanges(changes: SimpleChanges): void {
-    throw new Error('Method not implemented.');
+    this.playersList = this.PlayerService.getPlayers();
   }
 
 }

@@ -1,3 +1,4 @@
+import { PagesModule } from './../pages/pages.module';
 import { PipeTransform } from '@angular/core';
 import { MaterialModule } from './../material/material.module';
 import { NgModule } from '@angular/core';

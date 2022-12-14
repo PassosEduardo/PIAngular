@@ -76,7 +76,7 @@ deletePlayer(id: number) {
   this.playersList = this.storageService.get(defaultPlayerListKey)
   const index = this.playersList.findIndex((player)=> player.id == id);
   this.playersList.splice(index, 1);
-  this.storageService.set(defaultPlayerListKey,this.playersList)
+  this.storageService.set(defaultPlayerListKey, this.playersList)
 
 }
 
