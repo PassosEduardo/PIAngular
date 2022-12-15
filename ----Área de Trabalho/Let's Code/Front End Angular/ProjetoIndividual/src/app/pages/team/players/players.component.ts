@@ -19,6 +19,7 @@ import { EditDialogComponent } from 'src/app/shared/edit-dialog/edit-dialog.comp
 
 
       openDeleteDialog(): void {      
+        DialogComponent.player = this.player
         const dialogRef = this.deleteDialog.open(DialogComponent, {
         });
     

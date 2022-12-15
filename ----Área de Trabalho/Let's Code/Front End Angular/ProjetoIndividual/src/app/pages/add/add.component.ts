@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 })
 export class AddComponent {
   newPlayer: PlayerModel = new PlayerModel();
+  static id: number = 6;
 
   playerForm?: FormGroup;
   selectedPosition?: string;
@@ -43,11 +44,13 @@ export class AddComponent {
 
   
       this.newPlayer = this.playerForm?.value;
+      this.newPlayer.id = AddComponent.id;
 
       console.log(this.newPlayer);
 
 
       this.PlayerService.postPlayer(this.newPlayer)
+      AddComponent.id++;
 
     
       console.log("submitei")
