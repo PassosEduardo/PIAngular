@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class StorageService {
 
-    private storage: Storage;
+    public storage: Storage;
 
   constructor() { 
 

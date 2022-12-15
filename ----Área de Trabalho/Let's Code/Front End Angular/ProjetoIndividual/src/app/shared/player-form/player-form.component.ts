@@ -47,7 +47,7 @@ export class PlayerFormComponent {
 
   
       this.newPlayer = this.playerForm?.value;
-
+      this.newPlayer.id = EditDialogComponent.player.id
       
       this.PlayerService.updatePlayer(EditDialogComponent.player.id,this.newPlayer);
 
