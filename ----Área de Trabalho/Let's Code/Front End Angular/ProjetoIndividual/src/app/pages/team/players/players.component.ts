@@ -1,8 +1,9 @@
 import { MatDialog } from '@angular/material/dialog';
-import { Component,Input } from '@angular/core';
+import { Component,Input, TemplateRef, ViewChild } from '@angular/core';
 import PlayerModel from 'src/app/Models/player.model';
 import { DialogComponent } from 'src/app/shared/dialog/dialog.component';
 import { PlayerService } from 'src/app/services/player.service';
+import { EditDialogComponent } from 'src/app/shared/edit-dialog/edit-dialog.component';
 
 
   @Component({
@@ -11,33 +12,27 @@ import { PlayerService } from 'src/app/services/player.service';
     styleUrls: ['./players.component.css']
   })
   export class PlayersComponent {
-    @Input() player?:PlayerModel; 
+    @Input() player?:PlayerModel;
+    @ViewChild('dialogTemplate') dialogTemplate?: TemplateRef<any>;
 
-      constructor(private deleteDialog: MatDialog, private PlayerService: PlayerService){}
+      constructor(private deleteDialog: MatDialog, private PlayerService: PlayerService,private editDialog: MatDialog){}
 
 
-      openDialog(): void {      
+      openDeleteDialog(): void {      
         const dialogRef = this.deleteDialog.open(DialogComponent, {
         });
     
         dialogRef.afterClosed().subscribe(result => {
           console.log(DialogComponent);   
         });
+      }
+
+        openEditDialog() {
+          if(this.player) EditDialogComponent.player = this.player
+          this.editDialog.open(EditDialogComponent, {
+              data: { title: "Atualizar Jogador" }
+            });
+        }
       
     }
-
-    deleteItem(){
-      DialogComponent.player = this.player;
-      this.openDialog()
-      // if(result == true){
-      //   if (this.player)
-      //   {
-      //     this.PlayerService.deletePlayer(this.player.id)
-      //     window.location.reload()
-      //   } 
-      // }     
-    }
-
-
-  }
 

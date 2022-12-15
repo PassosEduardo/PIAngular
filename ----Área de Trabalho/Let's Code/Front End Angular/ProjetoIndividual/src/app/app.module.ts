@@ -11,6 +11,7 @@ import { AppComponent } from './app.component';
 import { MaterialModule } from './material/material.module';
 import { PagesModule } from './pages/pages.module';
 
+
 @NgModule({
   declarations: [
     AppComponent

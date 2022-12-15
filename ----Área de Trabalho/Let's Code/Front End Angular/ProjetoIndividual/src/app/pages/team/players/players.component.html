@@ -2,9 +2,9 @@
     <mat-card-header style="display:flexbox;">
       <mat-card-subtitle>{{player?.subtitle}}</mat-card-subtitle>
       <mat-card-title>{{player?.title }}</mat-card-title> 
-      <button (click)="deleteItem()"   name="delete" class="deleteIcon" ><mat-icon name="deleteIcon">delete</mat-icon></button>    
+      <button (click)="openDeleteDialog()"   name="delete" class="deleteIcon" ><mat-icon name="deleteIcon">delete</mat-icon></button>    
       <!-- <button (click)="openDialog()"   name="delete" class="deleteIcon" ><mat-icon name="deleteIcon">delete</mat-icon></button>  -->
-      <button (click)= "openDialog()" class="editIcon" name="editIcon"><mat-icon >edit</mat-icon></button>  
+      <button (click)= "openEditDialog()" class="editIcon" name="editIcon"><mat-icon >edit</mat-icon></button>  
     </mat-card-header>
     <!-- <div mat-card-avatar class="deleteIcon">
       <mat-icon>delete</mat-icon>

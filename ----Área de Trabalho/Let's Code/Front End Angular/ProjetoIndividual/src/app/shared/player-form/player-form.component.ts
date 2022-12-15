@@ -1,3 +1,5 @@
+import { EditDialogComponent } from 'src/app/shared/edit-dialog/edit-dialog.component';
+import { MatDialog } from '@angular/material/dialog';
 import { Component } from '@angular/core';
 import { FormGroup,FormControl } from '@angular/forms';
 import PlayerModel from 'src/app/Models/player.model';
@@ -5,17 +7,17 @@ import { PlayerService } from 'src/app/services/player.service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-add',
-  templateUrl: './add.component.html',
-  styleUrls: ['./add.component.css']
+  selector: 'app-player-form',
+  templateUrl: './player-form.component.html',
+  styleUrls: ['./player-form.component.css']
 })
-export class AddComponent {
+export class PlayerFormComponent {
   newPlayer: PlayerModel = new PlayerModel();
 
   playerForm?: FormGroup;
   selectedPosition?: string;
 
-  constructor(private PlayerService : PlayerService, private router:Router) {}
+  constructor(private PlayerService : PlayerService, private router:Router, dialog : MatDialog) {}
 
   ngOnInit() {
     this.playerForm = new FormGroup({
@@ -28,6 +30,8 @@ export class AddComponent {
       position: new FormControl(this.newPlayer.position)
     })};
 
+
+    //Falta acertar isto!
     onSubmitForm(event: any){
 
       this.playerForm?.patchValue({
@@ -44,10 +48,8 @@ export class AddComponent {
   
       this.newPlayer = this.playerForm?.value;
 
-      console.log(this.newPlayer);
-
-
-      this.PlayerService.postPlayer(this.newPlayer)
+      
+      this.PlayerService.updatePlayer(EditDialogComponent.player.id,this.newPlayer);
 
     
       console.log("submitei")

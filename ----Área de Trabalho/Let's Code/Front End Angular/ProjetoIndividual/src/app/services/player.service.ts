@@ -68,8 +68,10 @@ postPlayer(newPlayer: PlayerModel): void{
   this.playersList.push(newPlayer)
   this.storageService.set(defaultPlayerListKey,this.playersList)
 }
-updatePLayer(){
-
+updatePlayer(id: number, updatedPlayer: PlayerModel){
+  const index = this.playersList.findIndex((player) => player.id == id);
+  this.playersList[index] = updatedPlayer
+  this.storageService.set(defaultPlayerListKey,this.playersList)
 }
 deletePlayer(id: number) {
 

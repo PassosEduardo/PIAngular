@@ -14,7 +14,7 @@ export class DialogComponent {
   
   constructor(public dialogRef: MatDialogRef<DialogComponent>,private PlayerService: PlayerService)
   {  
-  }
+  } 
 
   cancel() {
     this.dialogRef.close();

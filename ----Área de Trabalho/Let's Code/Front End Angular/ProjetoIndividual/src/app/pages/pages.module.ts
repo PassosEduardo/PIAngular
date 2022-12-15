@@ -6,6 +6,7 @@ import { TeamComponent } from './team/team.component';
 import { PlayersComponent } from './team/players/players.component';
 import { SharedModule } from '../shared/shared.module';
 import { AddComponent } from './add/add.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 
 
@@ -14,7 +15,8 @@ import { AddComponent } from './add/add.component';
   declarations: [
     TeamComponent,
     PlayersComponent,
-    AddComponent
+    AddComponent,
+    PageNotFoundComponent
   ],
   imports: [
     CommonModule,

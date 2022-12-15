@@ -1,0 +1,49 @@
+<form class="task-form" *ngIf="playerForm" [formGroup]="playerForm" (ngSubmit)="onSubmitForm($event)">
+
+    <mat-form-field class="full-width" appearance="fill">
+      <mat-label>Nome Principal</mat-label>
+      <input matInput formControlName="title">
+    </mat-form-field>
+  
+    <mat-form-field class="full-width" appearance="fill">
+      <mat-label>Sobrenome</mat-label>
+      <input matInput formControlName="subtitle">
+    </mat-form-field>
+    
+    <mat-form-field class="full-width" appearance="fill">
+      <mat-label>Nacionalidade</mat-label>
+      <input matInput formControlName="nationality">
+    </mat-form-field>
+  
+    <mat-form-field appearance="fill">
+      <mat-label>Posição</mat-label>
+      <mat-select formControlName="position">
+        <mat-option  value="Meio-Campo">Meio-Campo</mat-option>
+        <mat-option value="Atacante">Atacante</mat-option>
+        <mat-option value="Zagueiro">Zagueiro</mat-option>
+        <mat-option value="Lateral">Lateral</mat-option>
+        <mat-option value="Goleiro">Goleiro</mat-option>
+      </mat-select>
+    </mat-form-field>
+  
+  
+    <mat-form-field class="full-width" appearance="fill">
+      <mat-label>Data de Nascimento</mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="birthDate">
+      <mat-hint>MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+  
+    <mat-form-field class="full-width" appearance="fill">
+      <mat-label>Valor de Mercado</mat-label>
+      <input matInput formControlName="MarketValue" type="number">
+    </mat-form-field>
+  
+    <mat-form-field class="full-width" appearance="fill">
+      <mat-label>URL Imagem</mat-label>
+      <input matInput formControlName="image">
+    </mat-form-field>
+  
+    <button class="submit-btn" style="margin-bottom:50px ;" mat-stroked-button color="primary" type="submit">Atualizar Jogador</button>
+  </form>
